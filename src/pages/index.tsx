@@ -71,7 +71,7 @@ export default function Home({}: Props) {
                           ...prev,
                           startDate: `${getYear(date)}-${getMonth(date)}-${getDate(date)}`
                         }))
-                      }} key={i} className={`h-[50px] md:h-[68px] w-full border-[1px] ${isEqual(currentDate, date) ? "text-white bg-primary border-primary" : "text-gray-700 dark:text-gray-200 border-gray-300 dark:border-gray-500 dark:hover:border-primary hover:border-primary"} transition-all cursor-pointer font-semibold rounded-lg flex flex-col items-center justify-center text-sm min-w-[33px]`}>
+                      }} key={i} className={`h-[50px] md:h-[68px] w-full border-[1px] ${isEqual(currentDate, date) ? "text-white bg-primary border-primary" : "text-gray-700 dark:text-gray-200 border-gray-300 dark:border-gray-500 dark:hover:border-primary hover:border-primary"} transition-all cursor-pointer font-semibold rounded-lg flex flex-col items-center justify-center text-sm min-w-[40px]`}>
                         <span>{DAYS[getDay(date)].slice(0, 3)+s}</span>
                         <span>{getDate(date)}</span>
                       </div>
