@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { twMerge } from 'tailwind-merge'
 
 type Props = {
@@ -8,6 +8,16 @@ type Props = {
 }
 
 export default function Modal({className, children, handleClose}: Props) {
+
+  useEffect(() => {
+    const body = document.querySelector("body") as HTMLBodyElement
+    body.style.overflow = "hidden"
+
+    return () => {
+      body.style.overflow = "auto"
+    }
+  }, [])
+  
   return (
     <div onClick={(e) => {
       const target = e.target as HTMLDivElement
