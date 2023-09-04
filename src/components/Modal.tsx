@@ -22,7 +22,7 @@ export default function Modal({className, children, handleClose}: Props) {
     <div onClick={(e) => {
       const target = e.target as HTMLDivElement
       target.classList.contains("app-modal") && handleClose?.()
-    }} className={twMerge("bg-[#00000090] app-modal fixed w-full h-screen top-0 left-0", className)}>
+    }} className={twMerge("bg-[#00000090] app-modal fixed w-full h-[calc(100vh-0px)] top-0 left-0", className)}>
       {children}
     </div>
   )
