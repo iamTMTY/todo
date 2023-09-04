@@ -92,12 +92,12 @@ export default function AddTodo({setAction, setTodo, action, className}: Props) 
           className="w-full"
           datePickerProps={datePickerProps} 
           setDatePickerProps={setDatePickerProps}
-          onChange={(date) => {
+          onChange={() => {
           }} 
         />
       </div>
       <div className={`flex justify-between items-center`}>
-        <div className="font-medium flex items-center gap-x-2 dark:text-gray-200"><img src={bell} alt="x mark" /><span>10 minutes before</span></div>
+        <div className="font-medium flex items-center gap-x-2 dark:text-gray-200"><img src={bell} alt="x mark" /><span className={showTenMinutes ? "" : "line-through"}>10 minutes before</span></div>
         <img src={close} alt="x mark" className="cursor-pointer" onClick={() => setShowTenMinutes(prev => !prev)} />
       </div>
       <div className="flex items-center gap-3 w-full">

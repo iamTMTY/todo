@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import bell from "assets/bell.svg"
 import settings from "assets/settings.svg"
 import profile_photo from "assets/profile_photo.png"

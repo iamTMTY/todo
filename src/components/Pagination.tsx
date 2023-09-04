@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import previous from "assets/previous.svg"
 import { twMerge } from 'tailwind-merge'
 import Previous from './icons/Previous'
 
@@ -8,13 +7,6 @@ type Props = {
   activePage: number
   handlePageChange?: (page: number) => void
   className?: React.ComponentProps<'div'>['className']
-}
-
-type PageButtonProps = {
-  children: any
-  isCurrentPage?: boolean
-  page: number
-
 }
 
 export default function Pagination({totalPages=1, activePage=1, handlePageChange, className}: Props) {
@@ -67,7 +59,6 @@ export default function Pagination({totalPages=1, activePage=1, handlePageChange
         {
           new Array(7).fill("").map((s, i) => {
             const page = getPage(i+1)
-
             const isCurrentPage = page === currentPage
             const onClick = () => {
               if(page) {
@@ -79,7 +70,7 @@ export default function Pagination({totalPages=1, activePage=1, handlePageChange
               <React.Fragment key={i}>
                 {
                   page === -1 ?
-                  <></> :
+                  <>{s}</> :
                   page === 0 ?
                   <Ellipse /> :
                   <span onClick={onClick} className={`rounded-full flex justify-center border-[1px] items-center w-6 h-6 lg:w-10 lg:h-10 font-semibold ${isCurrentPage ? "bg-gray-100 dark:bg-gray-700 dark:border-gray-700 dark:text-gray-200 text-gray-800 border-gray-100" : "text-gray-700 dark:text-gray-200 border-transparent hover:border-gray-300 dark:hover:border-gray-700"} cursor-pointer transition-all text-sm sm:text-base`}>{page}</span>

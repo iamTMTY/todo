@@ -1,14 +1,12 @@
 import React from "react";
 import Month from "./Month";
 import BottomControl from "./BottomControl";
-import { ReactNode } from "types";
 import { DatePickerProps } from "../types";
 import { twMerge } from "tailwind-merge";
 
 
 
 type Props = {
-  children?: ReactNode
   datePickerProps: DatePickerProps
   setDatePickerProps: React.Dispatch<React.SetStateAction<DatePickerProps>>
   handleCancel?: () => void
@@ -16,7 +14,7 @@ type Props = {
   className?: React.ComponentProps<'div'>['className']
 }
 
-export default function DatePicker({children, datePickerProps, setDatePickerProps, onChange, className}: Props) {
+export default function DatePicker({datePickerProps, setDatePickerProps, onChange, className}: Props) {
 
   // for datePicker to work you must provide a react state similar to the one below or simply use the useDatePicker hook in the index.js file
 
@@ -48,7 +46,7 @@ export default function DatePicker({children, datePickerProps, setDatePickerProp
             datePickerProps?.isRange ?
             <>
               <hr className='w-full h-[1px] bg-slate-300' />
-              <BottomControl datePicker={datePickerProps} onChange={onChange} />
+              <BottomControl datePicker={datePickerProps} />
             </> :
             <></>
           }

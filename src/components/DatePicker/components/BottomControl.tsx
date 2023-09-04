@@ -1,15 +1,13 @@
-import React from 'react'
 import { getDate, getMonth, getYear } from 'date-fns'
 import { DatePickerProps } from '../types'
 
 type Props = {
   datePicker: DatePickerProps
-  onChange: (date: DatePickerProps) => void
 }
 
-export default function BottomControl({datePicker, onChange}: Props) {
+export default function BottomControl({datePicker}: Props) {
 
-  const {startDate, endDate, error, isCustom, title} = datePicker
+  const {startDate, endDate, error, isCustom} = datePicker
   const startDateTitle = startDate ? `${MONTHS[getMonth(new Date(startDate))].slice(0, 3)},${getDate(new Date(startDate))} ${getYear(new Date(startDate))}`: ""
   const endDateTitle = endDate ? `${MONTHS[getMonth(new Date(endDate))].slice(0,3)},${getDate(new Date(endDate))} ${getYear(new Date(endDate))}` : ""
 
