@@ -154,7 +154,7 @@ export default function Home({}: Props) {
                 action={action} 
                 setTodo={setTodo} 
                 setAction={setAction} 
-                className={`bg-white dark:bg-gray-900 w-full md:w-auto p-4 rounded-tr-2xl rounded-tl-3xl h-[60vh] ${action.type === "add" ? "animate-modal_height" : ""}`}
+                className={`bg-white dark:bg-gray-900 w-full md:w-auto p-4 rounded-tr-2xl rounded-tl-3xl h-[80vh] overflow-y-auto ${action.type === "add" ? "animate-modal_height" : ""}`}
               />
             }
             {
@@ -163,7 +163,7 @@ export default function Home({}: Props) {
                 setTodo={setTodo} 
                 setAction={setAction} 
                 data={action.data!} 
-                className={`bg-white dark:bg-gray-900 w-full md:w-auto p-4 rounded-tr-2xl rounded-tl-3xl h-[60vh] animate-modal_height`}
+                className={`bg-white dark:bg-gray-900 w-full md:w-auto p-4 rounded-tr-2xl rounded-tl-3xl h-[80vh] overflow-y-auto animate-modal_height`}
               />
             }
           </Modal>

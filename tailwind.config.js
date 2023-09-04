@@ -25,7 +25,7 @@ export default {
         },
         modal_height: {
           from: {height: "0px"},
-          to: {height: "60vh"}
+          to: {height: "80vh"}
         }
       },
       animation: {
