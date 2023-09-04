@@ -75,7 +75,7 @@ export default function AddTodo({setAction, setTodo, action, className}: Props) 
         <h4 className="font-semibold dark:text-gray-200">{isEdit ? "Edit Task" : "Add Task"}</h4>
         <img src={close} className="cursor-pointer" alt="x mark" onClick={() => setAction({type: "default"})} />
       </div>
-      <textarea name="title" defaultValue={action?.data?.title || ""} disabled={isLoading} required={true} className="border-[1px] rounded-lg border-gray-300 dark:border-gray-400 bg-gray-50 dark:bg-gray-600 dark:text-gray-200 w-full p-4" rows={5} />
+      <textarea name="title" defaultValue={action?.data?.title || ""} disabled={isLoading} required={true} className="border-[1px] rounded-lg border-gray-300 dark:border-gray-400 bg-gray-50 min-h-[100px] dark:bg-gray-600 dark:text-gray-200 w-full p-4" rows={4} />
       <div className="flex justify-between gap-4 text-sm">
         <div 
           className="flex justify-center items-center gap-x-2 py-1 px-2 rounded-lg border-[1px] border-gray-300 dark:border-gray-400 dark:bg-gray-600 dark:text-gray-200 w-full md:w-max cursor-pointer"
@@ -87,15 +87,15 @@ export default function AddTodo({setAction, setTodo, action, className}: Props) 
         <input name="startTime" defaultValue={action?.data?.startTime || ""} disabled={isLoading} required={true} className="rounded-lg border-[1px] border-gray-300 dark:border-gray-400 dark:bg-gray-600 dark:text-gray-200 py-1 px-2 w-full md:w-max" type="time" />
         <input name="endTime" defaultValue={action?.data?.endTime || ""}disabled={isLoading} required={true} className="rounded-lg border-[1px] border-gray-300 dark:border-gray-400 dark:bg-gray-600 dark:text-gray-200 py-1 px-2 w-full md:w-max" type="time" />
       </div>
-      <div className={`overflow-hidden transition-[height] ${showDatePicker ? "h-[403px]" : "h-0"} `}>
+      {/* <div className={`overflow-auto ${showDatePicker ? "h-max" : "h-0"} `}> */}
         <DatePicker 
-          className="w-full"
+          className={`w-full transition-[height] ${showDatePicker ? "h-[400px]" : "h-0 overflow-hidden"} `}
           datePickerProps={datePickerProps} 
           setDatePickerProps={setDatePickerProps}
           onChange={() => {
           }} 
         />
-      </div>
+      {/* </div> */}
       <div className={`flex justify-between items-center`}>
         <div className="font-medium flex items-center gap-x-2 dark:text-gray-200"><img src={bell} alt="x mark" /><span className={showTenMinutes ? "" : "line-through"}>10 minutes before</span></div>
         <img src={close} alt="x mark" className="cursor-pointer" onClick={() => setShowTenMinutes(prev => !prev)} />

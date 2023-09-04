@@ -32,7 +32,7 @@ export default function DatePicker({datePickerProps, setDatePickerProps, onChang
   // })
   
   return (
-    <div className={twMerge("min-w-[300px]", className)}>
+    <div className={twMerge("min-w-[300px] h-[370px]", className)}>
       <div className="flex rounded-lg w-full">
         <div className="flex flex-col w-full">
           <div className="flex w-full">
